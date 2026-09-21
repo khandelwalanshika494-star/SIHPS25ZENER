@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp1", "top": 190, "left": 130, "attrs": {} },
+    { "type": "wokwi-mpu6050", "id": "mpu1", "top": 60, "left": 280, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": 340, "left": 280, "attrs": {} },
+    { "type": "wokwi-pushbutton", "id": "btn1", "top": 290, "left": 10, "attrs": { "color": "red" } }
+  ],
+  "connections": [
+    [ "esp1:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp1:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp1:GND.1", "mpu1:GND", "black", [ "v0" ] ],
+    [ "esp1:3V3", "mpu1:VCC", "red", [ "v0" ] ],
+    [ "esp1:21", "mpu1:SDA", "green", [ "v0" ] ],
+    [ "esp1:22", "mpu1:SCL", "blue", [ "v0" ] ],
+    [ "esp1:GND.1", "pot1:GND", "black", [ "v0" ] ],
+    [ "esp1:3V3", "pot1:VCC", "red", [ "v0" ] ],
+    [ "esp1:34", "pot1:SIG", "orange", [ "v0" ] ],
+    [ "esp1:GND.2", "btn1:1.l", "black", [ "v0" ] ],
+    [ "esp1:26", "btn1:2.l", "purple", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
